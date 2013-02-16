@@ -1,0 +1,50 @@
+{%extends "base/base.html"%}
+
+
+
+{%block noticias%}
+<div id="content" role="main" class="span7">
+{%for Noticias in ultimasnoticias%}
+	<article class="post hentry">
+		<header class="entry-header">
+			<h1 class="entry-title">
+			<a href="#" title="Post Heading" rel="bookmark">{{Noticias.titulo}}</a>
+			</h1>
+			<a href="#" title="Post Heading"><img src="{{MEDIA_URL}}{{Noticias.imagen}}" alt="Post thumbnail" class="thumbnail" /></a>
+		</header> <!-- .entry-header -->
+
+		<div class="entry-content">
+			{{Noticias.contenido}}
+			<a href="#" class="more-link">Continuar Leyendo<span class="meta-nav">&rarr;</span></a>
+
+		</div> <!-- .entry-content -->
+
+			<footer class="entry-meta">Posteado en: <a href="#" rel="category">{{Noticias.cat}}</a>
+			en
+			<time class="entry-date" datetime="{{Noticias.fecha}}" pubdate>
+				{{Noticias.fecha}}
+			</time>
+			por
+			<span class="author vcard"><a class="url fn n" href="#" title="View all posts by Author" rel="author">Rams</a>
+			</span>
+			</footer>
+
+	</article> <!-- .post.hentry -->
+	{%endfor%}
+</div> <!-- Finaliza la seccion de noticias -->
+{%endblock noticias%}
+
+{%block widget1%}
+	<aside class="widget">
+		<h3 class="widget-title">Encuestas Disponibles</h3>
+		{% if ultimaspreg %}
+			<ul>
+				{%for Preguntas in ultimaspreg%}
+					<li><a href="#">{{Preguntas.pregunta}}</a></li>
+				{%endfor%}
+			</ul>
+		{%else%}
+			<li><h4>No existen encuestas</h4></li>
+		{%endif%}
+	</aside> <!-- .widget -->
+{%endblock widget1%}
