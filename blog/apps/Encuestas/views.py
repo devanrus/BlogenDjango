@@ -1,4 +1,4 @@
-from SistemaEncuesta.apps.Encuestas.models import Preguntas
+from blog.apps.Encuestas.models import Preguntas
 from django.http import HttpResponse
 
 def index (request):

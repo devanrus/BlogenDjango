@@ -4,7 +4,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^', include ('SistemaEncuesta.apps.home.urls')),
+    url(r'^', include ('blog.apps.home.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^plantilla/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.MEDIA_ROOT}),
 

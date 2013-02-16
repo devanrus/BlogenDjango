@@ -1,4 +1,4 @@
-from SistemaEncuesta.apps.noticias.models import Categoria,Noticias
+from blog.apps.noticias.models import Categoria,Noticias
 from django.contrib import admin
 
 admin.site.register (Noticias)
